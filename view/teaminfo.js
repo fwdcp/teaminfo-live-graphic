@@ -10,15 +10,18 @@ var rostersVisible = false;
 function showTeams() {
   var show = new TimelineLite({paused: true});
 
-  show.to($('#blu-image'), 0.5, {left: "0", ease: Quad.easeOut}, "0");
-  show.to($('#red-image'), 0.5, {right: "0", ease: Quad.easeOut}, "0");
-  show.to($('#blu-info'), 0.5, {left: "-392px", ease: Quad.easeOut}, "0");
-  show.to($('#red-info'), 0.5, {right: "-392px", ease: Quad.easeOut}, "0");
-  show.to($('#blu-info'), 0.75, {left: "0", ease: Quad.easeOut}, "0.75");
-  show.to($('#red-info'), 0.75, {right: "0", ease: Quad.easeOut}, "0.75");
-  
-  show.play();
-  
+  show.from($('#blu-info'), 0, {left: "-512px", ease: Quad.easeOut}, 0)
+      .from($('#red-info'), 0, {right: "-512px", ease: Quad.easeOut}, 0)
+      .from($('#blu-image'), 0, {left: "-120px", ease: Quad.easeOut}, 0)
+      .from($('#red-image'), 0, {right: "-120px", ease: Quad.easeOut}, 0)
+      .to($('#blu-image'), 0.5, {left: 0, ease: Quad.easeOut}, 0)
+      .to($('#red-image'), 0.5, {right: 0, ease: Quad.easeOut}, 0)
+      .from($('#blu-info'), 0, {left: "-392px", ease: Quad.easeOut}, 0.75)
+      .from($('#red-info'), 0, {right: "-392px", ease: Quad.easeOut}, 0.75)
+      .to($('#blu-info'), 0.75, {left: 0, ease: Quad.easeOut}, 0.75)
+      .to($('#red-info'), 0.75, {right: 0, ease: Quad.easeOut}, 0.75)
+      .play();
+
   teamsVisible = true;
 }
 
@@ -30,11 +33,12 @@ function showRosters() {
   else {
     var show = new TimelineLite({paused: true});
 
-    show.to($('#blu-roster-dropdown'), 1, {top: "0", ease: Quad.easeOut}, "0");
-    show.to($('#red-roster-dropdown'), 1, {top: "0", ease: Quad.easeOut}, "0");
-    
-    show.play();
-    
+    show.from($('#blu-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
+        .from($('#red-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
+        .to($('#blu-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
+        .to($('#red-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
+        .play();
+
     rostersVisible = true;
   }
 }
@@ -47,15 +51,18 @@ function hideTeams() {
   else {
     var hide = new TimelineLite({paused: true});
 
-    hide.to($('#blu-info'), 0.5, {left: "-392px", ease: Quad.easeIn}, "0");
-    hide.to($('#red-info'), 0.5, {right: "-392px", ease: Quad.easeIn}, "0");
-    hide.to($('#blu-image'), 0.5, {left: "-120px", ease: Quad.easeIn}, "0.75");
-    hide.to($('#red-image'), 0.5, {right: "-120px", ease: Quad.easeIn}, "0.75");
-    hide.to($('#blu-info'), 0, {left: "-512px", ease: Quad.easeIn}, "0.5");
-    hide.to($('#red-info'), 0, {right: "-512px", ease: Quad.easeIn}, "0.5");
+    hide.from($('#blu-info'), 0, {left: 0, ease: Quad.easeIn}, 0)
+        .from($('#red-info'), 0, {right: 0, ease: Quad.easeIn}, 0)
+        .to($('#blu-info'), 0.75, {left: "-392px", ease: Quad.easeIn}, 0)
+        .to($('#red-info'), 0.75, {right: "-392px", ease: Quad.easeIn}, 0)
+        .from($('#blu-image'), 0, {left: 0, ease: Quad.easeIn}, 1)
+        .from($('#red-image'), 0, {right: 0, ease: Quad.easeIn}, 1)
+        .to($('#blu-info'), 0, {left: "-512px", ease: Quad.easeIn}, 1)
+        .to($('#red-info'), 0, {right: "-512px", ease: Quad.easeIn}, 1)
+        .to($('#blu-image'), 0.5, {left: "-120px", ease: Quad.easeIn}, 1)
+        .to($('#red-image'), 0.5, {right: "-120px", ease: Quad.easeIn}, 1)
+        .play();
 
-    hide.play();
-    
     teamsVisible = false;
   }
 }
@@ -63,11 +70,12 @@ function hideTeams() {
 function hideRosters() {
   var hide = new TimelineLite({paused: true});
 
-  hide.to($('#blu-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, "0");
-  hide.to($('#red-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, "0");
-  
-  hide.play();
-  
+  hide.from($('#blu-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
+      .from($('#red-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
+      .to($('#blu-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
+      .to($('#red-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
+      .play();
+
   rostersVisible = false;
 }
 
@@ -78,14 +86,14 @@ function updateData(data) {
     $('#blu-roster-dropdown').find('.blu-player:last-child > .blu-player-class > img').attr('src', player.classImage);
     $('#blu-roster-dropdown').find('.blu-player:last-child > .blu-player-name > span').text(player.name);
   });
-  
+
   $('#red-roster-dropdown').empty();
   data.redPlayers.forEach(function(player) {
     $('#red-player-template > div').clone().appendTo($('#red-roster-dropdown'));
     $('#red-roster-dropdown').find('.red-player:last-child > .red-player-class > img').attr('src', player.classImage);
     $('#red-roster-dropdown').find('.red-player:last-child > .red-player-name > span').text(player.name);
   });
-  
+
   $('#blu-image').css('background-image', 'url("' + data.bluImage + '"), linear-gradient(to bottom, ' + data.bluColor + ', ' + data.bluColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
   $('#red-image').css('background-image', 'url("' + data.redImage + '"), linear-gradient(to bottom, ' + data.redColor + ', ' + data.redColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
   $('#blu-name').css('background-color', data.bluColor);
