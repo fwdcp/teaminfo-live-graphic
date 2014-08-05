@@ -1,0 +1,13 @@
+{
+  "name": "teaminfo",
+  "version": "0.0.1",
+  "homepage": "http://fwdcp.net/",
+  "authors": [
+    "thesupremecommander <thesupremecmdr@gmail.com>"
+  ],
+  "description": "animated team info with dropdown rosters",
+  "resolutions": [
+    "720p"
+  ],
+  "license": "MIT"
+}

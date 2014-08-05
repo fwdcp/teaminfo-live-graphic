@@ -1,0 +1,56 @@
+<html>
+<head>
+	<%- setupScript %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="/view/teaminfo/teaminfo.css" rel="stylesheet"/>
+  
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/TweenMax.min.js"></script>
+	<script src="/view/teaminfo/teaminfo.js"></script>
+</head>
+<body>
+<div id="container">
+  <div id="blu-image">
+  </div>
+  <div id="blu-info">
+    <div id="blu-name">
+      <div id="blu-name-text"></div>
+    </div>
+    <div id="blu-desc">
+      <div id="blu-desc-text"></div>
+    </div>
+  </div>
+  <div id="blu-roster">
+    <div id="blu-roster-dropdown">
+    </div>
+    <div id="blu-player-template" style="display: none;">
+      <div class="blu-player">
+        <div class="blu-player-class"><img src="/view/teaminfo/img/scout.png" /></div>
+        <div class="blu-player-name"><span></span></div>
+      </div>
+    </div>
+  </div>
+  <div id="red-image">
+  </div>
+  <div id="red-info">
+    <div id="red-name">
+      <div id="red-name-text"></div>
+    </div>
+    <div id="red-desc">
+      <div id="red-desc-text"></div>
+    </div>
+  </div>
+  <div id="red-roster">
+    <div id="red-roster-dropdown">
+    </div>
+    <div id="red-player-template" style="display: none;">
+      <div class="red-player">
+        <div class="red-player-name"><span></span></div>
+        <div class="red-player-class"><img /></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

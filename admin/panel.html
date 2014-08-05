@@ -1,0 +1,84 @@
+<div id="teaminfo" class="panel panel-default panel-span-4">
+  <div class="panel-heading">
+    <h3 class="panel-title">Team Info</h3>
+    <i class="fa fa-arrow-circle-right panel-icon"></i>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="thumbnail">
+          <img id="teaminfo-blu-image-preview" src="/view/teaminfo/img/BLU_sign.png">
+        </span>
+        <input type="text" class="form-control" id="teaminfo-blu-image" placeholder="Team Image" value="/view/teaminfo/img/BLU_sign.png">
+        <input type="color" class="form-control" id="teaminfo-blu-color" value="#5885A2">
+        <input type="text" class="form-control" id="teaminfo-blu-name" placeholder="Team Name">
+        <textarea id="teaminfo-blu-desc" class="form-control" placeholder="Team Description"></textarea>
+        <div id="teaminfo-blu-players">
+          <div class="input-group">
+            <span class="input-group-addon" style="height: 35px">
+              <img class="teaminfo-class-image" src="/view/teaminfo/img/scout.png" style="max-height: 100%;" />
+            </span>
+            <input type="text" class="form-control teaminfo-player-name" placeholder="Player Name">
+            <span class="input-group-btn">
+              <button class="btn btn-xs btn-danger teaminfo-delete-player"><span class="glyphicon glyphicon-minus"></span></button>
+            </span>
+          </div>
+        </div>
+        <button class="btn btn-xs btn-success form-control teaminfo-add-player"><span class="glyphicon glyphicon-plus"></span></button>
+	    </div>
+      <div class="col-sm-6">
+        <span class="thumbnail">
+          <img id="teaminfo-red-image-preview" src="/view/teaminfo/img/RED_sign.png">
+        </span>
+        <input type="text" class="form-control" id="teaminfo-red-image" placeholder="Team Image" value="/view/teaminfo/img/RED_sign.png">
+        <input type="color" class="form-control" id="teaminfo-red-color" value="#B8383B">
+        <input type="text" class="form-control" id="teaminfo-red-name" placeholder="Team Name">
+        <textarea class="form-control" id="teaminfo-red-desc" placeholder="Team Description"></textarea>
+        <div id="teaminfo-red-players">
+          <div class="input-group">
+            <span class="input-group-addon" style="height: 35px">
+              <img class="teaminfo-class-image" src="/view/teaminfo/img/scout.png" style="max-height: 100%;" />
+            </span>
+            <input type="text" class="form-control teaminfo-player-name" placeholder="Player Name">
+            <span class="input-group-btn">
+              <button class="btn btn-xs btn-danger teaminfo-delete-player"><span class="glyphicon glyphicon-minus"></span></button>
+            </span>
+          </div>
+        </div>
+        <button class="btn btn-xs btn-success form-control teaminfo-add-player"><span class="glyphicon glyphicon-plus"></span></button>
+	    </div>
+        
+      <div id="teaminfo-new-player" style="display: none;">
+        <div class="input-group">
+          <span class="input-group-addon" style="height: 35px">
+            <img class="teaminfo-class-image" src="/view/teaminfo/img/scout.png" style="max-height: 100%;" />
+          </span>
+          <input type="text" class="form-control teaminfo-player-name" placeholder="Player Name">
+          <span class="input-group-btn">
+            <button class="btn btn-danger teaminfo-delete-player"><span class="glyphicon glyphicon-minus"></span></button>
+          </span>
+        </div>
+      </div>
+    </div>
+      
+    <button type="button" class="btn btn-xs btn-primary form-control" id="teaminfo-update" style="margin-top: 4px;">Update</button>
+    
+    <div class="btn-group btn-group-justified" style="margin-top: 4px;">
+      <div class="btn-group" style="padding-right:2px;">
+        <button type="button" class="btn btn-xs btn-success" id="teaminfo-show-teams">Show Teams</button>
+      </div>
+      <div class="btn-group" style="padding-left:2px;">
+        <button type="button" class="btn btn-xs btn-danger" id="teaminfo-hide-teams">Hide Teams</button>
+      </div>
+    </div>
+    
+    <div class="btn-group btn-group-justified" style="margin-top: 4px;">
+      <div class="btn-group" style="padding-right:2px;">
+        <button type="button" class="btn btn-xs btn-success" id="teaminfo-show-rosters">Show Rosters</button>
+      </div>
+      <div class="btn-group" style="padding-left:2px;">
+        <button type="button" class="btn btn-xs btn-danger" id="teaminfo-hide-rosters">Hide Rosters</button>
+      </div>
+    </div>
+  </div>
+</div>

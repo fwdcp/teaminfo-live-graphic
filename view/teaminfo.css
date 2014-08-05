@@ -1,0 +1,238 @@
+#container {
+  background-color: white;
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#blu-image {
+  height: 120px;
+  width: 120px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 60px;
+  left: -120px;
+  z-index: 5;
+  background: url("/view/teaminfo/img/BLU_sign.png") 50% 50% / contain no-repeat, linear-gradient(to bottom, #5885A2, #5885A2 45px, #f4f4f5 45px, #f4f4f5);
+}
+
+#red-image {
+  height: 120px;
+  width: 120px;
+  display: table-cell;
+  vertical-align: middle;
+  position: absolute;
+  top: 60px;
+  right: -120px;
+  z-index: 5;
+  background: url("/view/teaminfo/img/RED_sign.png") 50% 50% / contain no-repeat, linear-gradient(to bottom, #B8383B, #B8383B 45px, #f4f4f5 45px, #f4f4f5);
+}
+
+#blu-info {
+  height: 120px;
+  width: 512px;
+  display: table-cell;
+  vertical-align: middle;
+  position: absolute;
+  top: 60px;
+  left: -512px;
+  z-index: 3;
+  background: #f4f4f5;
+  border-top-right-radius: 40px 40px;
+  border-bottom-right-radius: 40px 40px;
+  overflow: hidden;
+}
+
+#blu-name {
+  height: 45px;
+  line-height: 45px;
+  width: 512px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  position: relative;
+  top: 0px;
+  z-index: 3;
+  background: #5885A2;
+}
+
+#blu-name-text {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #FFFFFF;
+}
+
+#blu-desc {
+  height: 75px;
+  line-height: 25px;
+  width: 512px;
+  vertical-align: middle;
+  text-align: right;
+  position: relative;
+  z-index: 3;
+}
+
+#blu-desc-text {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 15px;
+  margin-right: 15px;
+  white-space: pre-line;
+  color: #000000;
+}
+
+#red-info {
+  height: 120px;
+  width: 512px;
+  display: table-cell;
+  vertical-align: middle;
+  position: absolute;
+  top: 60px;
+  right: -512px;
+  z-index: 3;
+  background: #f4f4f5;
+  border-top-left-radius: 40px 40px;
+  border-bottom-left-radius: 40px 40px;
+  overflow: hidden;
+}
+
+#red-name {
+  height: 45px;
+  line-height: 45px;
+  width: 512px;
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  top: 0px;
+  z-index: 3;
+  background: #B8383B;
+}
+
+#red-name-text {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 15px;
+  color: #FFFFFF;
+}
+
+#red-desc {
+  height: 75px;
+  line-height: 25px;
+  width: 512px;
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  z-index: 3;
+}
+
+#red-desc-text {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 15px;
+  margin-left: 15px;
+  white-space: pre-line;
+  color: #000000;
+}
+
+#blu-roster {
+  position: absolute;
+  top: 180px;
+  left: 160px;
+  height: 540px;
+  width: 272px;
+  overflow: hidden;
+}
+
+#red-roster {
+  position: absolute;
+  top: 180px;
+  right: 160px;
+  height: 540px;
+  width: 272px;
+  overflow: hidden;
+}
+
+#blu-roster-dropdown {
+  background: #f4f4f5;
+  position: relative;
+  top: -100%;
+}
+
+#red-roster-dropdown {
+  background: #f4f4f5;
+  position: relative;
+  top: -100%;
+}
+
+.blu-player {
+  height: 36px;
+}
+
+.blu-player-class {
+  position: absolute;
+  left: 0;
+  background: #5885A2;
+  height: 36px;
+  width: 36px;
+}
+
+.blu-player-class > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.blu-player-name {
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  left: 36px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.blu-player-name > span {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+.red-player {
+  height: 36px;
+}
+
+.red-player-class {
+  position: absolute;
+  right: 0;
+  background: #B8383B;
+  height: 36px;
+  width: 36px;
+}
+
+.red-player-class > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.red-player-name {
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  right: 36px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.red-player-name > span {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 24px;
+  margin-right: 8px;
+}
