@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-#blu-image {
+#away-image {
   height: 120px;
   width: 120px;
   display: table-cell;
@@ -20,7 +20,7 @@
   background: url("/view/teaminfo/img/BLU_sign.png") 50% 50% / contain no-repeat, linear-gradient(to bottom, #5885A2, #5885A2 45px, #f4f4f5 45px, #f4f4f5);
 }
 
-#red-image {
+#home-image {
   height: 120px;
   width: 120px;
   display: table-cell;
@@ -32,7 +32,7 @@
   background: url("/view/teaminfo/img/RED_sign.png") 50% 50% / contain no-repeat, linear-gradient(to bottom, #B8383B, #B8383B 45px, #f4f4f5 45px, #f4f4f5);
 }
 
-#blu-info {
+#away-info {
   height: 120px;
   width: 512px;
   display: table-cell;
@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-#blu-name {
+#away-name {
   height: 45px;
   line-height: 45px;
   width: 512px;
@@ -60,7 +60,7 @@
   background: #5885A2;
 }
 
-#blu-name-text {
+#away-name-text {
   font-family: 'Open Sans';
   font-weight: 700;
   font-size: 30px;
@@ -68,7 +68,7 @@
   color: #FFFFFF;
 }
 
-#blu-desc {
+#away-desc {
   height: 75px;
   line-height: 25px;
   width: 512px;
@@ -78,7 +78,7 @@
   z-index: 3;
 }
 
-#blu-desc-text {
+#away-desc-text {
   font-family: 'Open Sans';
   font-weight: 300;
   font-size: 15px;
@@ -87,7 +87,7 @@
   color: #000000;
 }
 
-#red-info {
+#home-info {
   height: 120px;
   width: 512px;
   display: table-cell;
@@ -102,7 +102,7 @@
   overflow: hidden;
 }
 
-#red-name {
+#home-name {
   height: 45px;
   line-height: 45px;
   width: 512px;
@@ -114,7 +114,7 @@
   background: #B8383B;
 }
 
-#red-name-text {
+#home-name-text {
   font-family: 'Open Sans';
   font-weight: 700;
   font-size: 30px;
@@ -122,7 +122,7 @@
   color: #FFFFFF;
 }
 
-#red-desc {
+#home-desc {
   height: 75px;
   line-height: 25px;
   width: 512px;
@@ -132,7 +132,7 @@
   z-index: 3;
 }
 
-#red-desc-text {
+#home-desc-text {
   font-family: 'Open Sans';
   font-weight: 300;
   font-size: 15px;
@@ -141,7 +141,7 @@
   color: #000000;
 }
 
-#blu-roster {
+#away-roster {
   position: absolute;
   top: 180px;
   left: 160px;
@@ -150,7 +150,7 @@
   overflow: hidden;
 }
 
-#red-roster {
+#home-roster {
   position: absolute;
   top: 180px;
   right: 160px;
@@ -159,23 +159,23 @@
   overflow: hidden;
 }
 
-#blu-roster-dropdown {
+#away-roster-dropdown {
   background: #f4f4f5;
   position: relative;
   top: -100%;
 }
 
-#red-roster-dropdown {
+#home-roster-dropdown {
   background: #f4f4f5;
   position: relative;
   top: -100%;
 }
 
-.blu-player {
+.away-player {
   height: 36px;
 }
 
-.blu-player-class {
+.away-player-class {
   position: absolute;
   left: 0;
   background: #5885A2;
@@ -183,12 +183,12 @@
   width: 36px;
 }
 
-.blu-player-class > img {
+.away-player-class > img {
   max-height: 100%;
   max-width: 100%;
 }
 
-.blu-player-name {
+.away-player-name {
   height: 36px;
   line-height: 36px;
   position: absolute;
@@ -197,18 +197,18 @@
   vertical-align: middle;
 }
 
-.blu-player-name > span {
+.away-player-name > span {
   font-family: 'Open Sans';
   font-weight: 300;
   font-size: 24px;
   margin-left: 8px;
 }
 
-.red-player {
+.home-player {
   height: 36px;
 }
 
-.red-player-class {
+.home-player-class {
   position: absolute;
   right: 0;
   background: #B8383B;
@@ -216,12 +216,12 @@
   width: 36px;
 }
 
-.red-player-class > img {
+.home-player-class > img {
   max-height: 100%;
   max-width: 100%;
 }
 
-.red-player-name {
+.home-player-name {
   height: 36px;
   line-height: 36px;
   position: absolute;
@@ -230,7 +230,7 @@
   vertical-align: middle;
 }
 
-.red-player-name > span {
+.home-player-name > span {
   font-family: 'Open Sans';
   font-weight: 300;
   font-size: 24px;

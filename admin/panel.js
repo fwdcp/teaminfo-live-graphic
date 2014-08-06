@@ -31,34 +31,34 @@ $('#teaminfo').on('click', '.teaminfo-add-player', function() {
   $(this).prev().find('.input-group:last-child > span > img').attr('src', classImage);
 });
 
-$('#teaminfo-red-image').change(function() {
-  $('#teaminfo-red-image-preview').attr('src', $(this).val());
+$('#teaminfo-home-image').change(function() {
+  $('#teaminfo-home-image-preview').attr('src', $(this).val());
 });
 
-$('#teaminfo-blu-image').change(function() {
-  $('#teaminfo-blu-image-preview').attr('src', $(this).val());
+$('#teaminfo-away-image').change(function() {
+  $('#teaminfo-away-image-preview').attr('src', $(this).val());
 });
 
 $('#teaminfo-update').click(function() {
   var data = {};
   
-  data.bluName = $('#teaminfo-blu-name').val();
-  data.bluImage = $('#teaminfo-blu-image').val();
-  data.bluDesc = $('#teaminfo-blu-desc').val();
-  data.bluColor = $('#teaminfo-blu-color').val();
-  data.redName = $('#teaminfo-red-name').val();
-  data.redImage = $('#teaminfo-red-image').val();
-  data.redDesc = $('#teaminfo-red-desc').val();
-  data.redColor = $('#teaminfo-red-color').val();
+  data.awayName = $('#teaminfo-away-name').val();
+  data.awayImage = $('#teaminfo-away-image').val();
+  data.awayDesc = $('#teaminfo-away-desc').val();
+  data.awayColor = $('#teaminfo-away-color').val();
+  data.homeName = $('#teaminfo-home-name').val();
+  data.homeImage = $('#teaminfo-home-image').val();
+  data.homeDesc = $('#teaminfo-home-desc').val();
+  data.homeColor = $('#teaminfo-home-color').val();
   
-  data.bluPlayers = [];
-  data.redPlayers = [];
+  data.awayPlayers = [];
+  data.homePlayers = [];
   
-  $('#teaminfo-blu-players').children().each(function() {
-    data.bluPlayers.push({name: $(this).find('.teaminfo-player-name').val(), classImage: $(this).find('.teaminfo-class-image').attr('src')});
+  $('#teaminfo-away-players').children().each(function() {
+    data.awayPlayers.push({name: $(this).find('.teaminfo-player-name').val(), classImage: $(this).find('.teaminfo-class-image').attr('src')});
   });
-  $('#teaminfo-red-players').children().each(function() {
-    data.redPlayers.push({name: $(this).find('.teaminfo-player-name').val(), classImage: $(this).find('.teaminfo-class-image').attr('src')});
+  $('#teaminfo-home-players').children().each(function() {
+    data.homePlayers.push({name: $(this).find('.teaminfo-player-name').val(), classImage: $(this).find('.teaminfo-class-image').attr('src')});
   });
   
   nodecg.sendMessage('teaminfoUpdateData', data);

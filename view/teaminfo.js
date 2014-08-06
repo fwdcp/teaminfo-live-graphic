@@ -10,16 +10,16 @@ var rostersVisible = false;
 function showTeams() {
   var show = new TimelineLite({paused: true});
 
-  show.from($('#blu-info'), 0, {left: "-512px", ease: Quad.easeOut}, 0)
-      .from($('#red-info'), 0, {right: "-512px", ease: Quad.easeOut}, 0)
-      .from($('#blu-image'), 0, {left: "-120px", ease: Quad.easeOut}, 0)
-      .from($('#red-image'), 0, {right: "-120px", ease: Quad.easeOut}, 0)
-      .to($('#blu-image'), 0.5, {left: 0, ease: Quad.easeOut}, 0)
-      .to($('#red-image'), 0.5, {right: 0, ease: Quad.easeOut}, 0)
-      .from($('#blu-info'), 0, {left: "-392px", ease: Quad.easeOut}, 0.75)
-      .from($('#red-info'), 0, {right: "-392px", ease: Quad.easeOut}, 0.75)
-      .to($('#blu-info'), 0.75, {left: 0, ease: Quad.easeOut}, 0.75)
-      .to($('#red-info'), 0.75, {right: 0, ease: Quad.easeOut}, 0.75)
+  show.from($('#away-info'), 0, {left: "-512px", ease: Quad.easeOut}, 0)
+      .from($('#home-info'), 0, {right: "-512px", ease: Quad.easeOut}, 0)
+      .from($('#away-image'), 0, {left: "-120px", ease: Quad.easeOut}, 0)
+      .from($('#home-image'), 0, {right: "-120px", ease: Quad.easeOut}, 0)
+      .to($('#away-image'), 0.5, {left: 0, ease: Quad.easeOut}, 0)
+      .to($('#home-image'), 0.5, {right: 0, ease: Quad.easeOut}, 0)
+      .from($('#away-info'), 0, {left: "-392px", ease: Quad.easeOut}, 0.75)
+      .from($('#home-info'), 0, {right: "-392px", ease: Quad.easeOut}, 0.75)
+      .to($('#away-info'), 0.75, {left: 0, ease: Quad.easeOut}, 0.75)
+      .to($('#home-info'), 0.75, {right: 0, ease: Quad.easeOut}, 0.75)
       .play();
 
   teamsVisible = true;
@@ -33,10 +33,10 @@ function showRosters() {
   else {
     var show = new TimelineLite({paused: true});
 
-    show.from($('#blu-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
-        .from($('#red-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
-        .to($('#blu-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
-        .to($('#red-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
+    show.from($('#away-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
+        .from($('#home-roster-dropdown'), 0, {top: "-100%", ease: Quad.easeOut}, 0)
+        .to($('#away-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
+        .to($('#home-roster-dropdown'), 1, {top: 0, ease: Quad.easeOut}, 0)
         .play();
 
     rostersVisible = true;
@@ -51,16 +51,16 @@ function hideTeams() {
   else {
     var hide = new TimelineLite({paused: true});
 
-    hide.from($('#blu-info'), 0, {left: 0, ease: Quad.easeIn}, 0)
-        .from($('#red-info'), 0, {right: 0, ease: Quad.easeIn}, 0)
-        .to($('#blu-info'), 0.75, {left: "-392px", ease: Quad.easeIn}, 0)
-        .to($('#red-info'), 0.75, {right: "-392px", ease: Quad.easeIn}, 0)
-        .from($('#blu-image'), 0, {left: 0, ease: Quad.easeIn}, 1)
-        .from($('#red-image'), 0, {right: 0, ease: Quad.easeIn}, 1)
-        .to($('#blu-info'), 0, {left: "-512px", ease: Quad.easeIn}, 1)
-        .to($('#red-info'), 0, {right: "-512px", ease: Quad.easeIn}, 1)
-        .to($('#blu-image'), 0.5, {left: "-120px", ease: Quad.easeIn}, 1)
-        .to($('#red-image'), 0.5, {right: "-120px", ease: Quad.easeIn}, 1)
+    hide.from($('#away-info'), 0, {left: 0, ease: Quad.easeIn}, 0)
+        .from($('#home-info'), 0, {right: 0, ease: Quad.easeIn}, 0)
+        .to($('#away-info'), 0.75, {left: "-392px", ease: Quad.easeIn}, 0)
+        .to($('#home-info'), 0.75, {right: "-392px", ease: Quad.easeIn}, 0)
+        .from($('#away-image'), 0, {left: 0, ease: Quad.easeIn}, 1)
+        .from($('#home-image'), 0, {right: 0, ease: Quad.easeIn}, 1)
+        .to($('#away-info'), 0, {left: "-512px", ease: Quad.easeIn}, 1)
+        .to($('#home-info'), 0, {right: "-512px", ease: Quad.easeIn}, 1)
+        .to($('#away-image'), 0.5, {left: "-120px", ease: Quad.easeIn}, 1)
+        .to($('#home-image'), 0.5, {right: "-120px", ease: Quad.easeIn}, 1)
         .play();
 
     teamsVisible = false;
@@ -70,38 +70,80 @@ function hideTeams() {
 function hideRosters() {
   var hide = new TimelineLite({paused: true});
 
-  hide.from($('#blu-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
-      .from($('#red-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
-      .to($('#blu-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
-      .to($('#red-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
+  hide.from($('#away-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
+      .from($('#home-roster-dropdown'), 0, {top: 0, ease: Quad.easeIn}, 0)
+      .to($('#away-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
+      .to($('#home-roster-dropdown'), 1, {top: "-100%", ease: Quad.easeIn}, 0)
       .play();
 
   rostersVisible = false;
 }
 
 function updateData(data) {
-  $('#blu-roster-dropdown').empty();
-  data.bluPlayers.forEach(function(player) {
-    $('#blu-player-template > div').clone().appendTo($('#blu-roster-dropdown'));
-    $('#blu-roster-dropdown').find('.blu-player:last-child > .blu-player-class > img').attr('src', player.classImage);
-    $('#blu-roster-dropdown').find('.blu-player:last-child > .blu-player-name > span').text(player.name);
-  });
+  if (rostersVisible) {
+    hideRosters();
+    
+    setTimeout(function() {
+      $('#away-roster-dropdown').empty();
+      data.awayPlayers.forEach(function(player) {
+        $('#away-player-template > div').clone().appendTo($('#away-roster-dropdown'));
+        $('#away-roster-dropdown').find('.away-player:last-child > .away-player-class > img').attr('src', player.classImage);
+        $('#away-roster-dropdown').find('.away-player:last-child > .away-player-name > span').text(player.name);
+      });
 
-  $('#red-roster-dropdown').empty();
-  data.redPlayers.forEach(function(player) {
-    $('#red-player-template > div').clone().appendTo($('#red-roster-dropdown'));
-    $('#red-roster-dropdown').find('.red-player:last-child > .red-player-class > img').attr('src', player.classImage);
-    $('#red-roster-dropdown').find('.red-player:last-child > .red-player-name > span').text(player.name);
-  });
+      $('#home-roster-dropdown').empty();
+      data.homePlayers.forEach(function(player) {
+        $('#home-player-template > div').clone().appendTo($('#home-roster-dropdown'));
+        $('#home-roster-dropdown').find('.home-player:last-child > .home-player-class > img').attr('src', player.classImage);
+        $('#home-roster-dropdown').find('.home-player:last-child > .home-player-name > span').text(player.name);
+      });
+      
+      showRosters();
+    }, 1000);
+  }
+  else {
+    $('#away-roster-dropdown').empty();
+    data.awayPlayers.forEach(function(player) {
+      $('#away-player-template > div').clone().appendTo($('#away-roster-dropdown'));
+      $('#away-roster-dropdown').find('.away-player:last-child > .away-player-class > img').attr('src', player.classImage);
+      $('#away-roster-dropdown').find('.away-player:last-child > .away-player-name > span').text(player.name);
+    });
 
-  $('#blu-image').css('background-image', 'url("' + data.bluImage + '"), linear-gradient(to bottom, ' + data.bluColor + ', ' + data.bluColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
-  $('#red-image').css('background-image', 'url("' + data.redImage + '"), linear-gradient(to bottom, ' + data.redColor + ', ' + data.redColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
-  $('#blu-name').css('background-color', data.bluColor);
-  $('#red-name').css('background-color', data.redColor);
-  $('.blu-player-class').css('background-color', data.bluColor);
-  $('.red-player-class').css('background-color', data.redColor);
-  $('#blu-name-text').text(data.bluName);
-  $('#red-name-text').text(data.redName);
-  $('#blu-desc-text').text(data.bluDesc);
-  $('#red-desc-text').text(data.redDesc);
+    $('#home-roster-dropdown').empty();
+    data.homePlayers.forEach(function(player) {
+      $('#home-player-template > div').clone().appendTo($('#home-roster-dropdown'));
+      $('#home-roster-dropdown').find('.home-player:last-child > .home-player-class > img').attr('src', player.classImage);
+      $('#home-roster-dropdown').find('.home-player:last-child > .home-player-name > span').text(player.name);
+    });
+  }
+
+  var update = new TimelineLite({paused: true});
+  
+  update.from($('#away-image'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
+        .from($('#away-info'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
+        .to($('#away-image'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
+        .to($('#away-info'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
+        .set($('#away-image'), {backgroundImage: 'url("' + data.awayImage + '"), linear-gradient(to bottom, ' + data.awayColor + ', ' + data.awayColor + ' 45px, #f4f4f5 45px, #f4f4f5)'}, 1)
+        .set($('#away-name'), {backgroundColor: data.awayColor}, 1)
+        .set($('.away-player-class'), {backgroundColor: data.awayColor}, 1)
+        .set($('#away-name-text'), {text: data.awayName}, 1)
+        .set($('#away-desc-text'), {text: data.awayDesc}, 1)
+        .from($('#away-image'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
+        .from($('#away-info'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
+        .to($('#away-image'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
+        .to($('#away-info'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
+        .from($('#home-image'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
+        .from($('#home-info'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
+        .to($('#home-image'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
+        .to($('#home-info'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
+        .set($('#home-image'), {backgroundImage: 'url("' + data.homeImage + '"), linear-gradient(to bottom, ' + data.homeColor + ', ' + data.homeColor + ' 45px, #f4f4f5 45px, #f4f4f5)'}, 1)
+        .set($('#home-name'), {backgroundColor: data.homeColor}, 1)
+        .set($('.home-player-class'), {backgroundColor: data.homeColor}, 1)
+        .set($('#home-name-text'), {text: data.homeName}, 1)
+        .set($('#home-desc-text'), {text: data.homeDesc}, 1)
+        .from($('#home-image'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
+        .from($('#home-info'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
+        .to($('#home-image'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
+        .to($('#home-info'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
+        .play();
 }
