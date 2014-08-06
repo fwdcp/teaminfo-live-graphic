@@ -80,70 +80,28 @@ function hideRosters() {
 }
 
 function updateData(data) {
-  if (rostersVisible) {
-    hideRosters();
-    
-    setTimeout(function() {
-      $('#away-roster-dropdown').empty();
-      data.awayPlayers.forEach(function(player) {
-        $('#away-player-template > div').clone().appendTo($('#away-roster-dropdown'));
-        $('#away-roster-dropdown').find('.away-player:last-child > .away-player-class > img').attr('src', player.classImage);
-        $('#away-roster-dropdown').find('.away-player:last-child > .away-player-name > span').text(player.name);
-      });
+  $('#away-roster-dropdown').empty();
+  data.awayPlayers.forEach(function(player) {
+    $('#away-player-template > div').clone().appendTo($('#away-roster-dropdown'));
+    $('#away-roster-dropdown').find('.away-player:last-child > .away-player-class > img').attr('src', player.classImage);
+    $('#away-roster-dropdown').find('.away-player:last-child > .away-player-name > span').text(player.name);
+  });
 
-      $('#home-roster-dropdown').empty();
-      data.homePlayers.forEach(function(player) {
-        $('#home-player-template > div').clone().appendTo($('#home-roster-dropdown'));
-        $('#home-roster-dropdown').find('.home-player:last-child > .home-player-class > img').attr('src', player.classImage);
-        $('#home-roster-dropdown').find('.home-player:last-child > .home-player-name > span').text(player.name);
-      });
-      
-      showRosters();
-    }, 1000);
-  }
-  else {
-    $('#away-roster-dropdown').empty();
-    data.awayPlayers.forEach(function(player) {
-      $('#away-player-template > div').clone().appendTo($('#away-roster-dropdown'));
-      $('#away-roster-dropdown').find('.away-player:last-child > .away-player-class > img').attr('src', player.classImage);
-      $('#away-roster-dropdown').find('.away-player:last-child > .away-player-name > span').text(player.name);
-    });
+  $('#home-roster-dropdown').empty();
+  data.homePlayers.forEach(function(player) {
+    $('#home-player-template > div').clone().appendTo($('#home-roster-dropdown'));
+    $('#home-roster-dropdown').find('.home-player:last-child > .home-player-class > img').attr('src', player.classImage);
+    $('#home-roster-dropdown').find('.home-player:last-child > .home-player-name > span').text(player.name);
+  });
 
-    $('#home-roster-dropdown').empty();
-    data.homePlayers.forEach(function(player) {
-      $('#home-player-template > div').clone().appendTo($('#home-roster-dropdown'));
-      $('#home-roster-dropdown').find('.home-player:last-child > .home-player-class > img').attr('src', player.classImage);
-      $('#home-roster-dropdown').find('.home-player:last-child > .home-player-name > span').text(player.name);
-    });
-  }
-
-  var update = new TimelineLite({paused: true});
-  
-  update.from($('#away-image'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
-        .from($('#away-info'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
-        .to($('#away-image'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
-        .to($('#away-info'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
-        .set($('#away-image'), {backgroundImage: 'url("' + data.awayImage + '"), linear-gradient(to bottom, ' + data.awayColor + ', ' + data.awayColor + ' 45px, #f4f4f5 45px, #f4f4f5)'}, 1)
-        .set($('#away-name'), {backgroundColor: data.awayColor}, 1)
-        .set($('.away-player-class'), {backgroundColor: data.awayColor}, 1)
-        .set($('#away-name-text'), {text: data.awayName}, 1)
-        .set($('#away-desc-text'), {text: data.awayDesc}, 1)
-        .from($('#away-image'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
-        .from($('#away-info'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
-        .to($('#away-image'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
-        .to($('#away-info'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
-        .from($('#home-image'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
-        .from($('#home-info'), 0, {opacity: 1, ease: Quad.easeIn}, 0)
-        .to($('#home-image'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
-        .to($('#home-info'), 1, {opacity: 0, ease: Quad.easeIn}, 0)
-        .set($('#home-image'), {backgroundImage: 'url("' + data.homeImage + '"), linear-gradient(to bottom, ' + data.homeColor + ', ' + data.homeColor + ' 45px, #f4f4f5 45px, #f4f4f5)'}, 1)
-        .set($('#home-name'), {backgroundColor: data.homeColor}, 1)
-        .set($('.home-player-class'), {backgroundColor: data.homeColor}, 1)
-        .set($('#home-name-text'), {text: data.homeName}, 1)
-        .set($('#home-desc-text'), {text: data.homeDesc}, 1)
-        .from($('#home-image'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
-        .from($('#home-info'), 0, {opacity: 0, ease: Quad.easeOut}, 1)
-        .to($('#home-image'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
-        .to($('#home-info'), 1, {opacity: 1, ease: Quad.easeOut}, 1)
-        .play();
+  $('#away-image').css('background-image', 'url("' + data.awayImage + '"), linear-gradient(to bottom, ' + data.awayColor + ', ' + data.awayColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
+  $('#home-image').css('background-image', 'url("' + data.homeImage + '"), linear-gradient(to bottom, ' + data.homeColor + ', ' + data.homeColor + ' 45px, #f4f4f5 45px, #f4f4f5)');
+  $('#away-name').css('background-color', data.awayColor);
+  $('#home-name').css('background-color', data.homeColor);
+  $('.away-player-class').css('background-color', data.awayColor);
+  $('.home-player-class').css('background-color', data.homeColor);
+  $('#away-name-text').text(data.awayName);
+  $('#home-name-text').text(data.homeName);
+  $('#away-desc-text').text(data.awayDesc);
+  $('#home-desc-text').text(data.homeDesc);
 }
