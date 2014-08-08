@@ -1,6 +1,10 @@
 nodecg-teaminfo
 ===============
+
 a team summary graphic, complete with expandable rosters
+
+### Demo
+https://www.youtube.com/watch?v=007IL780bsQ
 
 ### Usage
 install to nodecg/packages/
