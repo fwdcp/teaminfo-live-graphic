@@ -9,7 +9,76 @@ $(document).ready(function () {
     '/view/teaminfo/img/medic.png',
     '/view/teaminfo/img/sniper.png',
     '/view/teaminfo/img/spy.png'
-  ]
+  ];
+
+  nodecg.declareSyncedVar({
+    variableName: 'teamInfo',
+    initialVal: {
+      awayName: '',
+      awayImage: '',
+      awayDesc: '',
+      awayColor: '',
+      homeName: '',
+      homeImage: '',
+      homeDesc: '',
+      homeColor: '',
+      awayPlayers: [],
+      homePlayers: []
+    },
+    setter: function(data) {
+      $('#teaminfo-away-name').val(data.awayName);
+      $('#teaminfo-away-image').val(data.awayImage);
+      $('#teaminfo-away-desc').val(data.awayDesc);
+      $('#teaminfo-away-color').val(data.awayColor);
+      $('#teaminfo-home-name').val(data.homeName);
+      $('#teaminfo-home-image').val(data.homeImage);
+      $('#teaminfo-home-desc').val(data.homeDesc);
+      $('#teaminfo-home-color').val(data.homeColor);
+
+      $('#teaminfo-away-image-preview').attr('src', data.awayImage);
+      $('#teaminfo-home-image-preview').attr('src', data.homeImage);
+
+      $('#teaminfo-away-players').children().remove();
+      $('#teaminfo-home-players').children().remove();
+
+      data.awayPlayers.forEach(function(player) {
+        $('#teaminfo-new-player > div').clone().appendTo($('#teaminfo-away-players'));
+        $('#teaminfo-away-players').find('.input-group:last-child > input').val(player.name);
+        $('#teaminfo-away-players').find('.input-group:last-child > span > img').attr(player.classImage);
+      });
+      data.homePlayers.forEach(function(player) {
+        $('#teaminfo-new-player > div').clone().appendTo($('#teaminfo-home-players'));
+        $('#teaminfo-home-players').find('.input-group:last-child > input').val(player.name);
+        $('#teaminfo-home-players').find('.input-group:last-child > span > img').attr(player.classImage);
+      });
+    }
+  });
+
+  nodecg.declareSyncedVar({
+    variableName: 'teamInfoTeamsVisible',
+    initialVal: false,
+    setter: function(val) {
+      if (!val) {
+        nodecg.variables.teamInfoRostersVisible = false;
+      }
+
+      $('#teaminfo-show-teams').prop('disabled', val);
+      $('#teaminfo-hide-teams').prop('disabled', !val);
+    }
+  });
+
+  nodecg.declareSyncedVar({
+    variableName: 'teamInfoRostersVisible',
+    initialVal: false,
+    setter: function(val) {
+      if (val) {
+        nodecg.variables.teamInfoTeamsVisible = true;
+      }
+
+      $('#teaminfo-show-rosters').prop('disabled', val);
+      $('#teaminfo-hide-rosters').prop('disabled', !val);
+    }
+  });
 
   $('#teaminfo').on('click', '.teaminfo-class-image', function() {
     var currentImage = classImages.indexOf($(this).attr('src'));
@@ -62,22 +131,22 @@ $(document).ready(function () {
       data.homePlayers.push({name: $(this).find('.teaminfo-player-name').val(), classImage: $(this).find('.teaminfo-class-image').attr('src')});
     });
 
-    nodecg.sendMessage('teaminfoUpdateData', data);
+    nodecg.variables.teamInfo = data;
   });
 
   $('#teaminfo-show-teams').click(function() {
-    nodecg.sendMessage('teaminfoShowTeams');
+    nodecg.variables.teamInfoTeamsVisible = true;
   });
 
   $('#teaminfo-hide-teams').click(function() {
-    nodecg.sendMessage('teaminfoHideTeams');
+    nodecg.variables.teamInfoTeamsVisible = false;
   });
 
   $('#teaminfo-show-rosters').click(function() {
-    nodecg.sendMessage('teaminfoShowRosters');
+    nodecg.variables.teamInfoRostersVisible = true;
   });
 
   $('#teaminfo-hide-rosters').click(function() {
-    nodecg.sendMessage('teaminfoHideRosters');
+    nodecg.variables.teamInfoRostersVisible = false;
   });
 });

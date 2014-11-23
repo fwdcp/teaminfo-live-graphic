@@ -1,6 +1,6 @@
 {
   "name": "teaminfo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "nodecgDependency": "~0.2.1",
   "homepage": "http://fwdcp.net/",
   "authors": [
