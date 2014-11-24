@@ -1,5 +1,5 @@
-nodecg-teaminfo
-===============
+teaminfo-live-graphic
+=====================
 
 a team summary graphic, complete with expandable rosters
 
