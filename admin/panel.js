@@ -44,12 +44,12 @@ $(document).ready(function () {
       data.awayPlayers.forEach(function(player) {
         $('#teaminfo-new-player > div').clone().appendTo($('#teaminfo-away-players'));
         $('#teaminfo-away-players').find('.input-group:last-child > input').val(player.name);
-        $('#teaminfo-away-players').find('.input-group:last-child > span > img').attr(player.classImage);
+        $('#teaminfo-away-players').find('.input-group:last-child > span > img').attr('src', player.classImage);
       });
       data.homePlayers.forEach(function(player) {
         $('#teaminfo-new-player > div').clone().appendTo($('#teaminfo-home-players'));
         $('#teaminfo-home-players').find('.input-group:last-child > input').val(player.name);
-        $('#teaminfo-home-players').find('.input-group:last-child > span > img').attr(player.classImage);
+        $('#teaminfo-home-players').find('.input-group:last-child > span > img').attr('src', player.classImage);
       });
     }
   });
