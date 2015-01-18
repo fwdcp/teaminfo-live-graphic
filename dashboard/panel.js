@@ -80,7 +80,9 @@ $(document).ready(function () {
     }
   });
 
-  $('#teaminfo').on('click', '.teaminfo-class-image', function() {
+  var panel = $bundle.filter('.teaminfo');
+
+  panel.on('click', '.teaminfo-class-image', function() {
     var currentImage = classImages.indexOf($(this).attr('src'));
 
     if (currentImage == classImages.length - 1) {
@@ -91,11 +93,11 @@ $(document).ready(function () {
     }
   });
 
-  $('#teaminfo').on('click', '.teaminfo-delete-player', function() {
+  panel.on('click', '.teaminfo-delete-player', function() {
     $(this).parent().parent().remove();
   });
 
-  $('#teaminfo').on('click', '.teaminfo-add-player', function() {
+  panel.on('click', '.teaminfo-add-player', function() {
     var classImage = $(this).prev().find('.input-group:last-child > span > img').attr('src');
     $('#teaminfo-new-player > div').clone().appendTo($(this).prev());
     $(this).prev().find('.input-group:last-child > span > img').attr('src', classImage);

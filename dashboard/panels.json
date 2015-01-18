@@ -1,0 +1,9 @@
+[
+  {
+    "name": "teaminfo",
+    "title": "Team Info",
+    "width": 4,
+    "file": "panel.html",
+    "faIcon": "fa-arrow-circle-right"
+  }
+]
